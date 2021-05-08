@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import RandomizeBtn from './RandomizeBtn';
+import React, { useState } from 'react';
+import MemberCard from './MemberCard';
 
 function App() {
+  
+  const [membersObj, setMembersObj] = useState(["Gerard Mistretta ", "Aunt Donna ", "Uncle Len ", "Andrew Minerva ", "Dominic Mistretta ", "Danny Fitzpatrick ", "Matt Cinnamon ", "Brendan Cinnamon ", "Jake Giaquinto ", "Frank Mistretta ", "Ryan McNamara ", "Niko Hawkesworth ", "Nick Minerva ", "Uncle Billy O "])
+  let [buttonPressed, setButtonPressed] = useState(false)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Minerva Mayhem League
+      <RandomizeBtn buttonPressed={buttonPressed} setButton={setButtonPressed} members={membersObj} />
+      <MemberCard buttonPressed={buttonPressed} members={membersObj} />
+      {/* {membersObj.sort(() => Math.random() - 0.5)} */}
     </div>
   );
 }
