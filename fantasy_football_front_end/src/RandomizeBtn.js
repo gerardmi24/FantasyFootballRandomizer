@@ -1,15 +1,15 @@
 import React from 'react';
 
-export default function randomizeBtn({ buttonPressed, setButton }) {
+export default function randomizeBtn({ count, setCount }) {
 
     function randomize() {
-        setButton(!buttonPressed)
+        setCount(count+1)
         // console.log("Button pressed?", buttonPressed)
     }
 
     return (
-        <div>
-            <button onClick={randomize}>Randomize</button>
+        <div className="Btn">
+            <button className="BtnSize" onClick={randomize}>Randomize Draft Order</button>
         </div>
     )
 }
