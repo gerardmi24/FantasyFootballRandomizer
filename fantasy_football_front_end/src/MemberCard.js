@@ -6,14 +6,12 @@ export default function MemberCard({count, members}) {
 
     function display() {
         return newOrder.map((mem) => <Members name={mem.name} titles={mem.titles} />)
-        // console.log("Mem", mem))
-        // console.log("new order", newOrder)
     }
 
     return (
-        <div>
+        <div className="Display">
             {count > 0 ? 
-            <ul> {display(newOrder)} </ul>
+            <>Draft Order:<ul> {display(newOrder)} </ul></>
              : null }
             {/* {members.sort(() => Math.random() - 0.5)} */}
         </div>
